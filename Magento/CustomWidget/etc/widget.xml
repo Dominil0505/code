@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Magento\CustomWidget\Block\Widget\VideoPlayer" id="magento_customwidget_video_player">
+        <label translate="true">Video player</label>
+        <description translate="true">Plays a video that start by auto, looped and muted</description>
+        <parameters>
+            <parameter name="url" xsi:type="text" visible="true" required="true" sort_order="10">
+                <label translate="true"> Video URL</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
