@@ -1,12 +1,50 @@
 <?php
 /** @var \Magento\CustomWidget\Block\Widget\VideoPlayer $block */
 ?>
+<style>
+    #vide_module_tag{
+
+    }
+</style>
 
 <div class="video_module">
-    <video id="video_module_tag" width="560" height="315" src="<?php echo $block->getVideoUrl()?>" autoplay muted loop></video>
+    <video id="video_module_tag" width="560" height="315" src="media/video/<?php echo $block->getVideoUrl()?>" autoplay muted loop></video>
     <div class="video_module_controls">
-        <button id="video_modul_play_pause"> Play/Pause </button>
-        <button id="video_modul_mute_unmute"> Mute/Unmute </button>
+        <button id="video_modul_play_pause" class="icon-search"> Pause </button>
+        <button id="video_modul_mute_unmute"> Unmute </button>
     </div>
-    <script src="../../../frontend/web/js/video_player.js"></script>
+
+   <script>
+    myVideo = document.getElementById("video_module_tag");
+    var play_pause = document.getElementById("video_modul_play_pause");
+    play_pause.addEventListener("click", playPause);
+
+
+    function playPause(){
+        if(myVideo.paused){
+            myVideo.play();
+            play_pause.innerHTML = "Pause";
+        }
+        else {
+            myVideo.pause();
+            play_pause.innerHTML = "Play";
+        }
+    }
+
+    var mute_unmute = document.getElementById("video_modul_mute_unmute");
+    mute_unmute.addEventListener("click", muteUnmute);
+
+    function muteUnmute(){
+        if(myVideo.muted == false){
+            myVideo.muted = true;
+            mute_unmute.innerHTML = "Unmute";
+        }
+        else {
+            myVideo.muted = false;
+            mute_unmute.innerHTML = "Mute";
+        }
+    }
+
+   </script>
+
 </div>
