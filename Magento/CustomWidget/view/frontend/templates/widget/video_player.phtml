@@ -2,10 +2,11 @@
 /** @var \Magento\CustomWidget\Block\Widget\VideoPlayer $block */
 ?>
 
-<div class="video-module">
-    <video width="560" height="315" src="<?php echo $block->getVideoUrl()?>" frameborder="0" autoplay muted loop></video>
-    <div class="video-module-controls">
-        <button id="myvideo-modul-pause"> Play/Pause </button>
-        <button id="myvideo-modul-unmute"> Mute/Unmute </button>
+<div class="video_module">
+    <video id="video_module_tag" width="560" height="315" src="<?php echo $block->getVideoUrl()?>" autoplay muted loop></video>
+    <div class="video_module_controls">
+        <button id="video_modul_play_pause"> Play/Pause </button>
+        <button id="video_modul_mute_unmute"> Mute/Unmute </button>
     </div>
+    <script src="../../../frontend/web/js/video_player.js"></script>
 </div>
